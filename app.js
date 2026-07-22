@@ -1,6 +1,6 @@
-// 이 파일은 프로젝트 루트에서 서비스된다 (로컬: npm run serve, 배포: GitHub Pages).
-// data/ 폴더는 루트 기준 형제 폴더이므로 절대경로로 읽는다.
-const DATA_URL = '/data/videos.json';
+// GitHub Pages 프로젝트 사이트는 도메인 루트가 아니라 /레포이름/ 하위에서 서빙되므로,
+// 맨앞에 '/'가 붙은 절대경로는 도메인 루트 기준으로 해석되어 깨진다. 반드시 상대경로를 쓴다.
+const DATA_URL = 'data/videos.json';
 
 async function loadVideos() {
   const statusEl = document.getElementById('status');
