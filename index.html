@@ -20,7 +20,10 @@
 
 <main>
   <section class="tab-panel" id="tab-youtube" role="tabpanel">
-    <p class="updated-at" id="updated-at"></p>
+    <div class="youtube-tab-header">
+      <p class="updated-at" id="updated-at"></p>
+      <button type="button" id="show-config-btn" class="btn btn--secondary">등록된 관심 대상 보기</button>
+    </div>
     <p class="status-message" id="status"></p>
     <ul class="video-list" id="video-list"></ul>
   </section>
@@ -42,6 +45,14 @@
     <p class="placeholder-message">준비 중입니다. 보유 자산 현황을 Google Sheets와 연동해 보여줄 예정입니다.</p>
   </section>
 </main>
+
+<dialog id="config-dialog" class="config-dialog">
+  <div class="config-dialog__header">
+    <h2>등록된 관심 대상 (config/filters.json)</h2>
+    <button type="button" id="config-dialog-close-btn" class="btn">닫기</button>
+  </div>
+  <pre id="config-dialog-content" class="config-dialog__content"></pre>
+</dialog>
 
 <script type="module" src="app.js"></script>
 </body>

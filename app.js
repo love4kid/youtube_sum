@@ -261,6 +261,34 @@ function setupSummarizeTab() {
   });
 }
 
+function setupConfigDialog() {
+  const button = document.getElementById('show-config-btn');
+  const dialog = document.getElementById('config-dialog');
+  const closeBtn = document.getElementById('config-dialog-close-btn');
+  const content = document.getElementById('config-dialog-content');
+
+  button.addEventListener('click', async () => {
+    content.textContent = '불러오는 중...';
+    dialog.showModal();
+    try {
+      const res = await fetch(`config/filters.json?t=${Date.now()}`, { cache: 'no-store' });
+      if (!res.ok) throw new Error(`로드 실패 (${res.status})`);
+      content.textContent = await res.text();
+    } catch (err) {
+      content.textContent = `불러오지 못했습니다: ${err.message}`;
+    }
+  });
+
+  closeBtn.addEventListener('click', () => dialog.close());
+
+  // backdrop(다이얼로그 바깥) 클릭 시 닫기: padding이 없어 콘텐츠 밖 클릭은
+  // 항상 dialog 자신이 target이 되는 것을 이용한다.
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+}
+
 setupTabs();
 setupSummarizeTab();
+setupConfigDialog();
 loadVideos();
