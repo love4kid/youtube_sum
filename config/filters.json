@@ -1,0 +1,16 @@
+{
+  "channels": [
+    {
+      "channelId": "UChlv4GSd7OQl3js-jkLOnFA",
+      "name": "삼프로TV 3PROTV"
+    }
+  ],
+  "matchFields": ["title"],
+  "include": {
+    "any": ["박병창"]
+  },
+  "exclude": {
+    "any": []
+  },
+  "maxResultsPerChannel": 50
+}

@@ -1,0 +1,44 @@
+name: Update videos
+
+on:
+  schedule:
+    # UTC 00:00, 10:00 = KST 09:00, 19:00
+    - cron: '0 0,10 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run update
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ secrets.GEMINI_MODEL }}
+        run: npm run update
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/videos.json
+          if git diff --staged --quiet; then
+            echo "변경된 내용 없음, 커밋 생략"
+          else
+            git commit -m "chore: 영상 목록/요약 자동 갱신"
+            git push
+          fi
