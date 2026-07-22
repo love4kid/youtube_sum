@@ -1,5 +1,5 @@
-// 이 페이지는 프로젝트 루트를 정적 서버로 서비스한다고 가정한다 (npm run serve).
-// 그래야 상위 폴더인 data/videos.json을 /data/videos.json 경로로 읽을 수 있다.
+// 이 파일은 프로젝트 루트에서 서비스된다 (로컬: npm run serve, 배포: GitHub Pages).
+// data/ 폴더는 루트 기준 형제 폴더이므로 절대경로로 읽는다.
 const DATA_URL = '/data/videos.json';
 
 async function loadVideos() {
