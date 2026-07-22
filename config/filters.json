@@ -24,17 +24,10 @@
       "maxResultsPerChannel": 300
     },
     {
-      "channelId": "UCWskYkV4c4S9D__rsfOl2JA",
-      "channelName": "한경 글로벌마켓",
-      "matchFields": ["title"],
-      "include": { "any": ["김현석"] },
-      "exclude": { "any": [] }
-    },
-    {
       "channelId": "UCIipmgxpUxDmPP-ma3Ahvbw",
       "channelName": "매경 월가월부",
       "matchFields": ["title"],
-      "include": { "any": ["어바웃 뉴욕", "홍장원의 불앤베어", "문지웅의 빅머니"] },
+      "include": { "any": ["홍장원의 불앤베어"] },
       "exclude": { "any": [] }
     }
   ]
