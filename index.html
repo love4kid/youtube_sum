@@ -3,18 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>삼프로TV 박병창 영상 요약</title>
+<title>투자 허브</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="page-header">
-  <h1>삼프로TV 박병창 출연 영상 요약</h1>
-  <p class="updated-at" id="updated-at"></p>
+  <h1>투자 허브</h1>
 </header>
+
+<nav class="tab-bar" role="tablist">
+  <button type="button" class="tab-button" role="tab" data-tab="youtube" aria-selected="true">from YouTube</button>
+  <button type="button" class="tab-button" role="tab" data-tab="summarize" aria-selected="false">영상 요약</button>
+  <button type="button" class="tab-button" role="tab" data-tab="stocks" aria-selected="false">종목 현황</button>
+  <button type="button" class="tab-button" role="tab" data-tab="assets" aria-selected="false">자산 현황</button>
+</nav>
+
 <main>
-  <p class="status-message" id="status"></p>
-  <ul class="video-list" id="video-list"></ul>
+  <section class="tab-panel" id="tab-youtube" role="tabpanel">
+    <p class="updated-at" id="updated-at"></p>
+    <p class="status-message" id="status"></p>
+    <ul class="video-list" id="video-list"></ul>
+  </section>
+
+  <section class="tab-panel" id="tab-summarize" role="tabpanel" hidden>
+    <div class="summarize-form">
+      <input type="text" id="summarize-url-input" class="text-input" placeholder="유튜브 영상 URL을 입력하세요">
+      <button type="button" id="summarize-submit-btn" class="btn btn--primary">요약 생성</button>
+    </div>
+    <p class="status-message" id="summarize-status"></p>
+    <ul class="video-list" id="summarize-result-list"></ul>
+  </section>
+
+  <section class="tab-panel" id="tab-stocks" role="tabpanel" hidden>
+    <p class="placeholder-message">준비 중입니다. 관심종목의 현재가·등락폭·등락률과 1개월/1일 차트를 볼 수 있는 기능이 추가될 예정입니다.</p>
+  </section>
+
+  <section class="tab-panel" id="tab-assets" role="tabpanel" hidden>
+    <p class="placeholder-message">준비 중입니다. 보유 자산 현황을 Google Sheets와 연동해 보여줄 예정입니다.</p>
+  </section>
 </main>
+
 <script type="module" src="app.js"></script>
 </body>
 </html>

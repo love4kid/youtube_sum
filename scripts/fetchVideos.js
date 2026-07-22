@@ -47,12 +47,12 @@ async function getPlaylistVideoSnippets(playlistId, maxResults, apiKey) {
   return snippets.slice(0, maxResults);
 }
 
-function matchesFilter(snippet, config) {
-  const fields = config.matchFields ?? ['title', 'description'];
+function matchesFilter(snippet, source) {
+  const fields = source.matchFields ?? ['title'];
   const haystack = fields.map((field) => snippet[field] ?? '').join('\n');
 
-  const includeList = config.include?.any ?? [];
-  const excludeList = config.exclude?.any ?? [];
+  const includeList = source.include?.any ?? [];
+  const excludeList = source.exclude?.any ?? [];
 
   const included = includeList.length === 0 || includeList.some((keyword) => haystack.includes(keyword));
   const excluded = excludeList.some((keyword) => haystack.includes(keyword));
@@ -64,28 +64,26 @@ function pickThumbnail(thumbnails) {
   return thumbnails?.medium?.url ?? thumbnails?.default?.url ?? thumbnails?.high?.url ?? '';
 }
 
-// config/filters.json에 등록된 모든 채널을 조회해 필터 조건에 맞는 영상만 반환한다.
+// config/filters.json의 sources(채널별 규칙)를 각각 조회해 필터 조건에 맞는 영상만 반환한다.
+// 채널마다 매칭 필드/포함·제외 키워드/조회 개수를 독립적으로 가질 수 있다.
 export async function fetchMatchedVideos(config, apiKey) {
   const matched = [];
 
-  for (const channel of config.channels) {
-    const uploadsPlaylistId = await getUploadsPlaylistId(channel.channelId, apiKey);
-    const snippets = await getPlaylistVideoSnippets(
-      uploadsPlaylistId,
-      config.maxResultsPerChannel ?? 50,
-      apiKey,
-    );
+  for (const source of config.sources) {
+    const uploadsPlaylistId = await getUploadsPlaylistId(source.channelId, apiKey);
+    const maxResults = source.maxResultsPerChannel ?? config.defaultMaxResultsPerChannel ?? 50;
+    const snippets = await getPlaylistVideoSnippets(uploadsPlaylistId, maxResults, apiKey);
 
     for (const snippet of snippets) {
-      if (!matchesFilter(snippet, config)) continue;
+      if (!matchesFilter(snippet, source)) continue;
 
       matched.push({
         videoId: snippet.resourceId.videoId,
         title: snippet.title,
         description: snippet.description,
         publishedAt: snippet.publishedAt,
-        channelId: channel.channelId,
-        channelName: channel.name,
+        channelId: source.channelId,
+        channelName: source.channelName,
         thumbnail: pickThumbnail(snippet.thumbnails),
       });
     }

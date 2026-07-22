@@ -40,6 +40,69 @@ body {
   color: #C9D8E8;
 }
 
+.tab-bar {
+  display: flex;
+  gap: 4px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+  background: var(--color-bg);
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.tab-button {
+  appearance: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  margin-bottom: -0.5px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+
+.tab-button[aria-selected="true"] {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  font-weight: 600;
+}
+
+.tab-panel[hidden] {
+  display: none;
+}
+
+.placeholder-message {
+  margin: 0;
+  padding: 48px 0;
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.summarize-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.text-input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-normal);
+}
+
+.text-input:focus {
+  outline: 1px solid var(--color-secondary);
+  outline-offset: -1px;
+}
+
 main {
   max-width: 960px;
   margin: 0 auto;

@@ -2,6 +2,9 @@
 // 맨앞에 '/'가 붙은 절대경로는 도메인 루트 기준으로 해석되어 깨진다. 반드시 상대경로를 쓴다.
 const DATA_URL = 'data/videos.json';
 
+// 온디맨드 영상 요약 API 엔드포인트 (아직 미배포 - 백엔드 플랫폼 결정 후 연결 예정).
+const SUMMARIZE_API_URL = '/api/summarize';
+
 async function loadVideos() {
   const statusEl = document.getElementById('status');
   const listEl = document.getElementById('video-list');
@@ -50,10 +53,13 @@ function createVideoCard(video) {
   title.textContent = video.title;
   body.appendChild(title);
 
-  const meta = document.createElement('p');
-  meta.className = 'video-card__meta';
-  meta.textContent = `${video.channelName} · ${formatPublishedAt(video.publishedAt)}`;
-  body.appendChild(meta);
+  const metaParts = [video.channelName, formatPublishedAt(video.publishedAt)].filter(Boolean);
+  if (metaParts.length > 0) {
+    const meta = document.createElement('p');
+    meta.className = 'video-card__meta';
+    meta.textContent = metaParts.join(' · ');
+    body.appendChild(meta);
+  }
 
   const summaryPanel = document.createElement('div');
   summaryPanel.className = 'video-card__summary';
@@ -185,4 +191,76 @@ function formatDateTime(iso) {
   return new Date(iso).toLocaleString('ko-KR');
 }
 
+function setupTabs() {
+  const tabButtons = Array.from(document.querySelectorAll('.tab-button'));
+  const panelsByTab = {
+    youtube: document.getElementById('tab-youtube'),
+    summarize: document.getElementById('tab-summarize'),
+    stocks: document.getElementById('tab-stocks'),
+    assets: document.getElementById('tab-assets'),
+  };
+
+  for (const button of tabButtons) {
+    button.addEventListener('click', () => {
+      const target = button.dataset.tab;
+      for (const b of tabButtons) {
+        b.setAttribute('aria-selected', String(b === button));
+      }
+      for (const [key, panel] of Object.entries(panelsByTab)) {
+        panel.hidden = key !== target;
+      }
+    });
+  }
+}
+
+// youtube.com/watch?v=, youtu.be/, /shorts/, /embed/ 형태 또는 11자리 영상 ID 자체를 허용한다.
+function extractVideoId(input) {
+  const trimmed = input.trim();
+  const match = trimmed.match(
+    /(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
+  );
+  if (match) return match[1];
+  if (/^[a-zA-Z0-9_-]{11}$/.test(trimmed)) return trimmed;
+  return null;
+}
+
+function setupSummarizeTab() {
+  const input = document.getElementById('summarize-url-input');
+  const submitBtn = document.getElementById('summarize-submit-btn');
+  const statusEl = document.getElementById('summarize-status');
+  const listEl = document.getElementById('summarize-result-list');
+
+  submitBtn.addEventListener('click', async () => {
+    const videoId = extractVideoId(input.value);
+    if (!videoId) {
+      statusEl.textContent = '올바른 유튜브 URL 또는 11자리 영상 ID를 입력해주세요.';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    statusEl.textContent = '요약 생성 중입니다... (자막 추출 후 Gemini로 요약하므로 다소 시간이 걸릴 수 있습니다)';
+
+    try {
+      const res = await fetch(SUMMARIZE_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ videoId }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || `요청 실패 (${res.status})`);
+      }
+      const video = await res.json();
+      statusEl.textContent = '';
+      listEl.prepend(createVideoCard(video));
+    } catch (err) {
+      statusEl.textContent = `요약 생성 실패: ${err.message}`;
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+}
+
+setupTabs();
+setupSummarizeTab();
 loadVideos();

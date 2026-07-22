@@ -1,16 +1,41 @@
 {
-  "channels": [
+  "defaultMaxResultsPerChannel": 50,
+  "sources": [
     {
       "channelId": "UChlv4GSd7OQl3js-jkLOnFA",
-      "name": "삼프로TV 3PROTV"
+      "channelName": "삼프로TV 3PROTV",
+      "matchFields": ["title"],
+      "include": { "any": ["박병창", "장우진"] },
+      "exclude": { "any": [] }
+    },
+    {
+      "channelId": "UCSVtOfGvhtz2QosSIM_3WoQ",
+      "channelName": "오종태의 투자병법",
+      "matchFields": ["title"],
+      "include": { "any": [] },
+      "exclude": { "any": [] }
+    },
+    {
+      "channelId": "UC6kZpTl39-_SqfBrF1-N2oQ",
+      "channelName": "연합뉴스경제TV",
+      "matchFields": ["title"],
+      "include": { "any": ["이승조"] },
+      "exclude": { "any": [] },
+      "maxResultsPerChannel": 300
+    },
+    {
+      "channelId": "UCWskYkV4c4S9D__rsfOl2JA",
+      "channelName": "한경 글로벌마켓",
+      "matchFields": ["title"],
+      "include": { "any": ["김현석"] },
+      "exclude": { "any": [] }
+    },
+    {
+      "channelId": "UCIipmgxpUxDmPP-ma3Ahvbw",
+      "channelName": "매경 월가월부",
+      "matchFields": ["title"],
+      "include": { "any": ["어바웃 뉴욕", "홍장원의 불앤베어", "문지웅의 빅머니"] },
+      "exclude": { "any": [] }
     }
-  ],
-  "matchFields": ["title"],
-  "include": {
-    "any": ["박병창"]
-  },
-  "exclude": {
-    "any": []
-  },
-  "maxResultsPerChannel": 50
+  ]
 }
