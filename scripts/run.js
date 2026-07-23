@@ -56,8 +56,10 @@ async function main() {
   let summarizedCount = 0;
   let pendingCount = 0;
   const resultVideos = [];
+  const matchedIds = new Set();
 
   for (const video of matched) {
+    matchedIds.add(video.videoId);
     const existing = existingById.get(video.videoId);
 
     // 이미 요약이 완료된 영상은 재처리하지 않는다 (캐시, Gemini 재호출 방지).
@@ -115,9 +117,21 @@ async function main() {
     }
   }
 
+  // 이번 조회(matched)에 나타나지 않은 기존 영상은 그대로 보존한다.
+  // fetchMatchedVideos는 채널별 최근 업로드 중 maxResultsPerChannel개만 훑으므로,
+  // 그 범위 밖으로 밀려난 과거 영상까지 매번 갱신 대상에서 통째로 사라지면 안 된다.
+  const untouchedVideos = existingData.videos.filter((video) => !matchedIds.has(video.videoId));
+
+  // 보관 목록은 최신순 상위 MAX_VIDEOS개로 유지한다.
+  // 새 영상이 위에 추가되면서 자연히 가장 오래된 영상부터 잘려나간다.
+  const MAX_VIDEOS = 30;
+  const mergedVideos = [...resultVideos, ...untouchedVideos]
+    .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+    .slice(0, MAX_VIDEOS);
+
   const output = {
     updatedAt: new Date().toISOString(),
-    videos: resultVideos,
+    videos: mergedVideos,
   };
 
   await mkdir(path.dirname(DATA_PATH), { recursive: true });
@@ -125,8 +139,9 @@ async function main() {
   await writeFile(tmpPath, JSON.stringify(output, null, 2), 'utf-8');
   await rename(tmpPath, DATA_PATH);
 
+  const droppedCount = resultVideos.length + untouchedVideos.length - mergedVideos.length;
   console.log(
-    `완료: 신규 ${newCount}건 / 요약 성공 ${summarizedCount}건 / 준비중(자막없음) ${pendingCount}건`,
+    `완료: 신규 ${newCount}건 / 요약 성공 ${summarizedCount}건 / 준비중(자막없음) ${pendingCount}건 / 보관 ${mergedVideos.length}건 (${MAX_VIDEOS}개 초과로 제외 ${droppedCount}건)`,
   );
 }
 

@@ -2,8 +2,10 @@ name: Update videos
 
 on:
   schedule:
-    # UTC 00:00, 10:00 = KST 09:00, 19:00
-    - cron: '0 0,10 * * *'
+    # UTC 00:05, 10:05 = KST 09:05, 19:05
+    # 정각(0분)은 GitHub Actions 스케줄러 부하가 몰려 실행이 몇 시간씩 밀리거나
+    # 건너뛰어질 수 있어(GitHub 공식 문서 권고), 정각을 피해 5분으로 오프셋했다.
+    - cron: '5 0,10 * * *'
   workflow_dispatch: {}
 
 permissions:
