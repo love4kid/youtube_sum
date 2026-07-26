@@ -1,6 +1,19 @@
 {
-  "updatedAt": "2026-07-25T11:16:33.501Z",
+  "updatedAt": "2026-07-26T03:29:57.543Z",
   "videos": [
+    {
+      "videoId": "JtCnSyodlW8",
+      "title": "AI 없는 세상은 이제 없습니다, 투자 기준이 바뀌었습니다 | 오투도감 2편",
+      "description": "[AI 없는 세상은 이제 없습니다, 투자 기준이 바뀌었습니다]\n\nAI를 사용할지 말지는 더 이상 질문이 아닙니다.\nAI 없는 세상도, AI가 줄어드는 세상도 오지 않습니다.\n이제 질문은 하나입니다. 어디에, 얼마나.\n그걸 바닥에 깔고 그 위에서 판단해야 하는 시대입니다.\n\n그런데도 시장의 밸류에이션에는 여전히\n'속도가 확 줄지 않을까', '투자가 확 꺾이지 않을까' 하는 의심이 담겨 있습니다.\n그 간극이 지금 우리가 서 있는 자리입니다.\n\n감시망을 벗어난 AI, 통제할 수 없는 발전 속도, \n1살짜리가 6개월 만에 서른이 되는 듯한 변화까지.\n그럼에도 아직 초기라고 말하는 이유는 무엇인지,\n그리고 지금부터 더 주목해야할 시장은 어디인지 이야기합니다.\n\n※촬영일시 : 2026년 7월 22일 11시 00분\n\n_\n두 달 사이 천당과 지옥, 지금 시장 닷컴 버블과 다릅니다 | 오투도감 1편 : https://youtu.be/zTaUe_KWwiw?si=lCbgUa7IW4i26nAL\n \n\n─────────────────\n\n📌 오투도감 멤버를 소개합니다\n\n최용화 과장 | 하나증권 Club1 WM센터\n한국투자증권 국제부, 트러스톤자산운용 기관마케팅팀을 거쳐 법인과 외국인 그리고 개인 투자자에 대한 고른 현장 경험과 이해를 전해드립니다. 컴퓨터공학 전공으로 지금 시장의 핵심인 AI 분야에도 깊은 이해를 갖고 있어, 현업의 생생한 시각과 기술적 관점을 함께 전해드립니다.\n\n■ 고객센터 : https://us-campus.channel.io/home",
+      "publishedAt": "2026-07-26T01:00:12Z",
+      "channelId": "UCSVtOfGvhtz2QosSIM_3WoQ",
+      "channelName": "오종태의 투자병법",
+      "thumbnail": "https://i.ytimg.com/vi/JtCnSyodlW8/mqdefault.jpg",
+      "transcriptStatus": "pending",
+      "summary": null,
+      "summaryUpdatedAt": null,
+      "firstFailedAt": "2026-07-26T03:28:31.741Z"
+    },
     {
       "videoId": "zTaUe_KWwiw",
       "title": "두 달 사이 천당과 지옥, 지금 시장 닷컴 버블과 다릅니다 | 오투도감 1편",
@@ -377,19 +390,6 @@
       "summary": null,
       "summaryUpdatedAt": null,
       "firstFailedAt": "2026-07-22T08:57:45.497Z"
-    },
-    {
-      "videoId": "BXOvg-FK3t0",
-      "title": "일주일에 17% 등락하는 시장, 하루살이가 되지 않는 법 | 오종태의 투자병법",
-      "description": "[멀미나는 롤러코스피, 오늘만 투자하실 건가요]\n코스피가 일주일 사이 17%를 오르내렸습니다. 8,933까지 갔다가 7,442까지 내려갔다가 오늘 다시 8% 급등. 종목이 아니라 지수의 움직임입니다. 이 정도 변동성에서 수익을 내는 건 사실 매우 어렵습니다.\n\n손실은 너무 쉽게 발생합니다. 자산도 심리도 상처받기 쉬운 구간입니다.\n\n투자에서 가장 중요한 건 자기를 속이지 않는 것입니다. 시장이 좋을 때 난 수익은 내 실력이라고 착각하기 쉽고, 5월의 변동성과 심리적 고통을 겪고도 오늘 지수가 8% 오르니까 다 잊어버립니다.\n\n1년, 3년, 5년을 생각하던 우리가 왜 갑자기 하루살이가 됐을까요. 개인 투자자의 가장 큰 강점은 시장을 이기는 게 아니라 안 할 수 있다는 것입니다. 비행기가 난기류에 들어서면 안전벨트를 매라고 합니다. 지금 시장도 그렇습니다.\n\n지금 다시 안전벨트를 점검해야 할 때입니다.\n\n※ 촬영일시 : 2026년 6월 9일 15시 20분\n\n■ 고객센터 : https://us-campus.channel.io/home",
-      "publishedAt": "2026-06-09T09:40:09Z",
-      "channelId": "UCSVtOfGvhtz2QosSIM_3WoQ",
-      "channelName": "오종태의 투자병법",
-      "thumbnail": "https://i.ytimg.com/vi/BXOvg-FK3t0/mqdefault.jpg",
-      "transcriptStatus": "pending",
-      "summary": null,
-      "summaryUpdatedAt": null,
-      "firstFailedAt": "2026-07-22T08:57:50.329Z"
     }
   ]
 }
