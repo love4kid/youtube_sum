@@ -1,6 +1,19 @@
 {
-  "updatedAt": "2026-07-31T12:05:40.271Z",
+  "updatedAt": "2026-08-01T03:27:47.954Z",
   "videos": [
+    {
+      "videoId": "R0IL2MFsqyE",
+      "title": "이번 반등 어떻게 대응해야 할까?ㅣ장우진 금시공 대표 [주말인터뷰]",
+      "description": "✨주식의 시대 제.대.로 배우자!✨배움으로 차이를 만든다🚨\n🔥\"장우진의 투자서당\"을 지금 만나보세요!\n👉https://bit.ly/46OIrLB\n\n#삼프로TV #삼프로 #3protv",
+      "publishedAt": "2026-07-31T23:00:22Z",
+      "channelId": "UChlv4GSd7OQl3js-jkLOnFA",
+      "channelName": "삼프로TV 3PROTV",
+      "thumbnail": "https://i.ytimg.com/vi/R0IL2MFsqyE/mqdefault.jpg",
+      "transcriptStatus": "pending",
+      "summary": null,
+      "summaryUpdatedAt": null,
+      "firstFailedAt": "2026-08-01T03:26:28.756Z"
+    },
     {
       "videoId": "SbRuaZT-lNs",
       "title": "저점은 확인됐다? 반등 목표는 6500! | 박병창 MP파트너스 대표 [마켓 인사이드]",
@@ -377,19 +390,6 @@
       "summary": null,
       "summaryUpdatedAt": null,
       "firstFailedAt": "2026-07-22T08:54:55.363Z"
-    },
-    {
-      "videoId": "v0VjtfKn0OE",
-      "title": "[홍장원의 불앤베어] SK하이닉스 미국 상장 대박에 가려진 우려. 향후 관전 포인트는",
-      "description": "*'매경 월가월부' 에서 따끈한 주식정보를 확인하세요!\n◆ 채널 구독하기 : https://www.youtube.com/@MK_Invest\n\n*텔레그램에서 더 다양한 내용을 확인하실 수 있습니다\n◆텔레그램 링크 : https://t.me/mkglobalinvest\n\nⓒ 매일경제. All rights reserved.  \n본 콘텐츠의 무단 복제, 배포, 전송, 2차 가공을 금합니다.\n\n#SK하이닉스 #반도체 #삼성전자 #최태원 #DRAM #불앤베어 #홍장원 #장기금리 #물가  #주식 #투자 #재테크 #주식투자 #국내주식 #해외주식 #미국주식 #ETF #펀드 #증권 #경제 #부동산 #금리 #물가#주린이 #매일경제 #매경 #매일경제신문 #월가월부 #나스닥 #뉴욕증시 #미국증시 #미국선물 #국내주식 #마이크론 #국제유가 #트럼프",
-      "publishedAt": "2026-07-11T15:50:06Z",
-      "channelId": "UCIipmgxpUxDmPP-ma3Ahvbw",
-      "channelName": "매경 월가월부",
-      "thumbnail": "https://i.ytimg.com/vi/v0VjtfKn0OE/mqdefault.jpg",
-      "transcriptStatus": "pending",
-      "summary": null,
-      "summaryUpdatedAt": null,
-      "firstFailedAt": "2026-07-22T08:55:04.885Z"
     }
   ]
 }
