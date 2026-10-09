@@ -1,6 +1,19 @@
 {
-  "updatedAt": "2026-10-08T17:19:06.654Z",
+  "updatedAt": "2026-10-09T05:31:06.991Z",
   "videos": [
+    {
+      "videoId": "18hOuqgDw9o",
+      "title": "\"증시 짓눌린다\" 107조 힘 못 쓰는 이유 | 장우진 금시공 대표 [주말인터뷰]",
+      "description": "✨주식의 시대 제.대.로 배우자!✨배움으로 차이를 만든다🚨\n🔥\"장우진의 투자서당\"을 지금 만나보세요!\n👉https://bit.ly/46OIrLB\n\n#삼프로TV #삼프로 #3protv",
+      "publishedAt": "2026-10-08T23:00:12Z",
+      "channelId": "UChlv4GSd7OQl3js-jkLOnFA",
+      "channelName": "삼프로TV 3PROTV",
+      "thumbnail": "https://i.ytimg.com/vi/18hOuqgDw9o/mqdefault.jpg",
+      "transcriptStatus": "pending",
+      "summary": null,
+      "summaryUpdatedAt": null,
+      "firstFailedAt": "2026-10-09T05:30:01.036Z"
+    },
     {
       "videoId": "MpZjwIU5mqE",
       "title": "삼성전자 3분기 영업익 107조…좋은 실적에도 주가는 왜? | 박병창 MP파트너스 대표 [마켓 인사이드]",
@@ -377,19 +390,6 @@
       "summary": null,
       "summaryUpdatedAt": null,
       "firstFailedAt": "2026-09-21T04:17:02.320Z"
-    },
-    {
-      "videoId": "7A53DMq_rE0",
-      "title": "\"컨트롤이 안 된다\" AI 수장들의 속도 조절 선언, 그래서 투자자는 무엇을 쌓아야 하나 | 오종태의 복잡계 인사이트 EP. 2",
-      "description": "지난 주, 다리오 아모데이와 샘 올트먼, 일론 머스크까지 AI 업계의 수장들이 한목소리로 \"프론티어 모델의 개발 속도를 조절해야 한다\"고 말했습니다. \n트럼프 대통령은 곧바로 \"그러면 중국에 밀린다\"며 반대했고요. \n\n여기에 또 하나의 축이 겹칩니다. \n\n\"상반기는 심리였고, 하반기는 금리다.\" \n하이퍼스케일러의 채권이 국채와 경쟁하고, 미국 금리는 '5'라는 숫자를 넘어섰습니다. \n\n물이 가득 차 찰랑거리는 댐 아래에 서 있는 느낌. \n그 수위가 낮아졌다는 것은 무엇으로 확인할 수 있을까요? \n\n\"30년은 쓸 줄 알았던 내 투자 방식, 이제는 3년을 생각한다\"는 고백, \n그리고 AI 시대에 우리가 지금 당장 쌓아야 할 것은 무엇일까요?\n이번에도 정답 대신, 판단에 이르는 생각의 과정을 그대로 따라가 봅니다. \n\n여러분은 이번 논쟁을, 지난 2~3년과 같은 눈으로 보고 계시지 않나요?\n\n※ 본 채널은 금융투자업자가 아닌 유사투자자문업자가 운영하는 채널로서 개별적인 투자 상담과 자금 운영이 불가합니다. \n본 사이트에서 제공되는 모든 정보는 투자판단의 참고자료로 원금 손실이 발생할 수 있으며, 그 손실은 투자자에게 귀속됩니다. \n\n※ 고객센터 : https://us-insight.channel.io/home",
-      "publishedAt": "2026-09-20T21:50:08Z",
-      "channelId": "UCSVtOfGvhtz2QosSIM_3WoQ",
-      "channelName": "오종태의 투자병법",
-      "thumbnail": "https://i.ytimg.com/vi/7A53DMq_rE0/mqdefault.jpg",
-      "transcriptStatus": "pending",
-      "summary": null,
-      "summaryUpdatedAt": null,
-      "firstFailedAt": "2026-09-21T04:17:03.714Z"
     }
   ]
 }
